@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :customers
+  devise_for :admins
   root to: 'pages#home'
 
   get '/up/', to: 'up#index', as: :up

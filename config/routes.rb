@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     sessions: 'customers/sessions',
     registrations: 'customers/registrations'
   }
-  
+
   root to: 'pages#home'
 
   get '/up/', to: 'up#index', as: :up

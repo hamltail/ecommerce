@@ -59,7 +59,7 @@
                   </div>
                 </td>
                 <td class="p-3">
-                  <span class="text-lg"></span>
+                  <span class="text-lg"><%= number_to_currency(cart_item.line_total, unit: "¥", strip_insignificant_zeros: true) %></span>
                 </td>
                 <td class="p-3">
                   <div class="flex justify-center">
@@ -83,7 +83,7 @@
       </h1>
       <div class="flex justify-between my-6">
         <span class="font-semibold text-lg uppercase">subtotal</span>
-        <span class="font-semibold text-lg"></span>
+        <span class="font-semibold text-lg"><%= number_to_currency(@total, unit: "¥", strip_insignificant_zeros: true) %></span>
       </div>
       <div class="flex justify-between my-6">
         <span class="font-semibold text-lg uppercase">postage</span>

@@ -87,11 +87,11 @@
       </div>
       <div class="flex justify-between my-6">
         <span class="font-semibold text-lg uppercase">postage</span>
-        <span class="font-semibold text-lg"></span>
+        <span class="font-semibold text-lg"><%= number_to_currency(POSTAGE, unit: "¥", strip_insignificant_zeros: true) %></span>
       </div>
       <div class="flex justify-between my-6">
         <span class="font-semibold text-lg uppercase">total</span>
-        <span class="font-semibold text-lg"></span>
+        <span class="font-semibold text-lg"><%= number_to_currency(@total + POSTAGE, unit: "¥", strip_insignificant_zeros: true) %></span>
       </div>
     </div>
   </div>

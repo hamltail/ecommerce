@@ -8,4 +8,6 @@ class Order < ApplicationRecord
     out_of_delivery: 3,
     delivered: 4
   }
+
+  has_many :order_details, dependent: :destroy
 end

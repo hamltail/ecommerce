@@ -11,7 +11,10 @@ class Admins::PagesController < ApplicationController
   private
 
   def get_orders(params)
-    return [Order.eager_load(:customer).latest, 'all'] if !params[:status].present? || !Order.statuses.keys.to_a.include?(params[:status])
+    if !params[:status].present? || !Order.statuses.keys.to_a.include?(params[:status])
+      return [Order.eager_load(:customer).latest,
+              'all']
+    end
 
     get_by_enum_value(params[:status])
   end

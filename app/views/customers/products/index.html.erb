@@ -1,17 +1,17 @@
 <div class="mb-8 text-center">
   <span class="text-3xl font-bold">
-    Products
+    商品
   </span>
 </div>
 <div class="flex flex-wrap justify-center md:justify-start px-5">
   <div class="mb-3 w-fit text-md font-medium mr-2 px-4 py-1.5 rounded <%= @sort === "latest" ? "bg-gray-800 text-gray-100" : "bg-gray-100 text-gray-800" %>">
-    <%= link_to 'Latest', products_path(latest: true) %>
+    <%= link_to '新着順', products_path(latest: true) %>
   </div>
   <div class="mb-3 w-fit text-md font-medium mr-2 px-4 py-1.5 rounded <%= @sort === "price_high_to_low" ? "bg-gray-800 text-gray-100" : "bg-gray-100 text-gray-800" %>">
-    <%= link_to 'Price: High to Low', products_path(price_high_to_low: true) %>
+    <%= link_to '価格：高い順', products_path(price_high_to_low: true) %>
   </div>
   <div class="mb-3 w-fit text-md font-medium mr-2 px-4 py-1.5 rounded <%= @sort === "price_low_to_high" ? "bg-gray-800 text-gray-100" : "bg-gray-100 text-gray-800" %>">
-    <%= link_to 'Price: Low to High', products_path(price_low_to_high: true) %>
+    <%= link_to '価格：安い順', products_path(price_low_to_high: true) %>
   </div>
 </div>
 <div class='flex flex-wrap justify-center'>
@@ -24,9 +24,9 @@
           <div class="flex justify-between items-center">
             <span class="text-3xl font-bold text-gray-900"><%= number_to_currency(product.price, unit: "¥", strip_insignificant_zeros: true) %></span>
             <% if product.stock > 0 %>
-              <span class="bg-blue-100 text-blue-800 text-xs font-semibold p-2 rounded">In stock</span>
+              <span class="bg-blue-100 text-blue-800 text-xs font-semibold p-2 rounded">在庫あり</span>
             <% else %>
-              <span class="bg-red-100 text-red-800 text-xs font-semibold p-2 rounded">Out of stock</span>
+              <span class="bg-red-100 text-red-800 text-xs font-semibold p-2 rounded">在庫なし</span>
             <% end %>
           </div>
         </div>

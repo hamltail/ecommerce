@@ -1,16 +1,16 @@
 <div class="mb-8 text-center">
   <span class="text-3xl font-bold">
-    Shopping Cart
+    カート
   </span>
 </div>
 
 <% if @cart_items.count == 0 %>
   <div class='mx-auto max-w-3xl'>
-    <p class='mb-8 text-xl text-center'>No item</p>
+    <p class='mb-8 text-xl text-center'>カートは空です</p>
     <div class='flex justify-center'>
       <%= link_to products_path, class: 'group inline-flex items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-purple-600 to-blue-500 p-0.5 font-medium text-gray-900 hover:text-white focus:ring-4 focus:ring-blue-300 group-hover:from-purple-600 group-hover:to-blue-500' do %>
         <span class='rounded-md bg-white px-5 py-2.5 transition-all duration-75 ease-in group-hover:bg-opacity-0'>
-          Find Products
+          商品を探そう
         </span>
       <% end %>
     </div>
@@ -22,10 +22,10 @@
         <table>
           <thead>
             <tr class="bg-gray-100 text-gray-600 uppercase text-sm leading-normal">
-              <th class="py-4 px-8">product</th>
-              <th class="py-4 px-8">price</th>
-              <th class="py-4 px-8">quantity</th>
-              <th class="py-4 px-8">total</th>
+              <th class="py-4 px-8">商品</th>
+              <th class="py-4 px-8">価格</th>
+              <th class="py-4 px-8">数量</th>
+              <th class="py-4 px-8">合計</th>
               <th class="py-4 px-8"></th>
             </tr>
           </thead>
@@ -35,7 +35,7 @@
                 <td class="p-3 whitespace-nowrap">
                   <div class="flex flex-col justify-center mx-6">
                     <span class="font-bold text-xl"><%= cart_item.product.name %></span>
-                    <span class="text-sm"><%= cart_item.product.stock %> left in stock</span>
+                    <span class="text-sm">在庫残り <%= cart_item.product.stock %></span>
                   </div>
                 </td>
                 <td class="p-3">
@@ -63,7 +63,7 @@
                 </td>
                 <td class="p-3">
                   <div class="flex justify-center">
-                    <%= link_to cart_item_path(cart_item), data: { "turbo-method": :delete, "turbo_confirm": 'Are you sure?' } do %>
+                    <%= link_to cart_item_path(cart_item), data: { "turbo-method": :delete, "turbo_confirm": '削除しますか？' } do %>
                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-trash text-red-500" viewBox="0 0 16 16">
                         <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
                         <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
@@ -79,22 +79,22 @@
     </div>
     <div class="px-6 xl:w-1/3">
       <h1 class="font-semibold text-2xl border-b pb-6 text-center">
-        Cart Summary
+        概要
       </h1>
       <div class="flex justify-between my-6">
-        <span class="font-semibold text-lg uppercase">subtotal</span>
+        <span class="font-semibold text-lg uppercase">小計</span>
         <span class="font-semibold text-lg"><%= number_to_currency(@total, unit: "¥", strip_insignificant_zeros: true) %></span>
       </div>
       <div class="flex justify-between my-6">
-        <span class="font-semibold text-lg uppercase">postage</span>
+        <span class="font-semibold text-lg uppercase">送料</span>
         <span class="font-semibold text-lg"><%= number_to_currency(POSTAGE, unit: "¥", strip_insignificant_zeros: true) %></span>
       </div>
       <div class="flex justify-between my-6">
-        <span class="font-semibold text-lg uppercase">total</span>
+        <span class="font-semibold text-lg uppercase">合計</span>
         <span class="font-semibold text-lg"><%= number_to_currency(@total + POSTAGE, unit: "¥", strip_insignificant_zeros: true) %></span>
       </div>
       <%= button_to checkouts_path, data: { turbo: false }, class:'w-full cursor-pointer focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2' do %>
-        Checkout
+        支払う
       <% end %>
     </div>
   </div>

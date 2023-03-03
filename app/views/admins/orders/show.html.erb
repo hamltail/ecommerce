@@ -1,13 +1,13 @@
 <div class="px-6">
   <div class="flex justify-start item-start space-y-2 flex-col mb-8">
-    <h1 class="mb-1 text-3xl lg:text-4xl font-semibold leading-7 lg:leading-9 text-gray-800">Order ID #<%= @order.id %></h1>
-    <p class="text-base font-medium leading-6 text-gray-600">CreatedAt: <%= l @order.created_at, format: :short %></p>
-    <p class="text-base font-medium leading-6 text-gray-600">UpdatedAt: <%= l @order.updated_at, format: :short %></p>
+    <h1 class="mb-1 text-3xl lg:text-4xl font-semibold leading-7 lg:leading-9 text-gray-800">注文番号 #<%= @order.id %></h1>
+    <p class="text-base font-medium leading-6 text-gray-600">登録日時: <%= l @order.created_at, format: :short %></p>
+    <p class="text-base font-medium leading-6 text-gray-600">更新日時: <%= l @order.updated_at, format: :short %></p>
   </div> 
   <div class="flex flex-col xl:flex-row jusitfy-center  w-full xl:space-x-8 space-y-4 md:space-y-6 xl:space-y-0">
     <div class="flex flex-col justify-start items-start w-full space-y-4 md:space-y-6 xl:space-y-8">
       <div class="flex flex-col justify-start items-start bg-gray-50 px-4 py-4 md:py-6 md:p-6 xl:p-8 w-full">
-        <p class="text-lg md:text-xl font-semibold leading-6 xl:leading-5 text-gray-800">Customer’s Cart</p>
+        <p class="text-lg md:text-xl font-semibold leading-6 xl:leading-5 text-gray-800">顧客のカート</p>
         <% @order.order_details.each do |order_detail| %>
           <div class="mt-4 md:mt-6 flex flex-row justify-start items-start md:items-center space-x-6 xl:space-x-8 w-full">
             <div class="pb-4 md:pb-8 w-40">
@@ -18,7 +18,7 @@
                 <p class="text-3xl font-semibold leading-6 text-gray-800"><%= order_detail.product.name %></p>
                 <div class="flex justify-start items-start flex-col space-y-2">
                   <p class="text-lg leading-none text-gray-800"><%= number_to_currency(order_detail.price, unit: "¥", strip_insignificant_zeros: true) %></p>
-                  <p class="text-md leading-none text-gray-800">Qty: <%= order_detail.quantity %></p>
+                  <p class="text-md leading-none text-gray-800">数量: <%= order_detail.quantity %></p>
                 </div>
               </div>
             </div>
@@ -27,19 +27,19 @@
       </div>
       <div class="flex justify-center flex-col md:flex-row items-stretch w-full space-y-4 md:space-y-0 md:space-x-6 xl:space-x-8">
           <div class="flex flex-col px-4 py-6 md:p-6 xl:p-8 w-full bg-gray-50 space-y-6">
-              <h3 class="text-xl font-semibold leading-5 text-gray-800">Summary</h3>
+              <h3 class="text-xl font-semibold leading-5 text-gray-800">概要</h3>
               <div class="flex justify-center items-center w-full space-y-4 flex-col border-gray-200 border-b pb-4">
                 <div class="flex justify-between w-full">
-                  <p class="text-base leading-4 text-gray-800">Subtotal</p>
+                  <p class="text-base leading-4 text-gray-800">小計</p>
                   <p class="text-base leading-4 text-gray-600"><%= number_to_currency(@order.billing_amount - @order.postage, unit: "¥", strip_insignificant_zeros: true) %></p>
                 </div>
                 <div class="flex justify-between items-center w-full">
-                  <p class="text-base leading-4 text-gray-800">Shipping</p>
+                  <p class="text-base leading-4 text-gray-800">送料</p>
                   <p class="text-base leading-4 text-gray-600"><%= number_to_currency(@order.postage, unit: "¥", strip_insignificant_zeros: true) %></p>
                 </div>
               </div>
               <div class="flex justify-between items-center w-full">
-                <p class="text-base font-semibold leading-4 text-gray-800">Total</p>
+                <p class="text-base font-semibold leading-4 text-gray-800">合計</p>
                 <p class="text-base font-semibold leading-4 text-gray-600"><%= number_to_currency(@order.billing_amount, unit: "¥", strip_insignificant_zeros: true) %></p>
               </div>
           </div>
@@ -47,7 +47,7 @@
     </div>
     <div class="flex flex-col justify-start items-start w-full space-y-4 md:space-y-6 xl:space-y-8">
       <div class="bg-gray-50 w-full h-fit px-4 py-6 md:p-6 xl:p-8 ">
-        <h3 class="text-xl font-semibold leading-5 text-gray-800">Customer</h3>
+        <h3 class="text-xl font-semibold leading-5 text-gray-800">顧客</h3>
         <div class="flex flex-col md:flex-row xl:flex-col justify-start w-full md:space-x-6 lg:space-x-8 xl:space-x-0">
             <div class="flex flex-col justify-start items-start flex-shrink-0">
                 <div class="flex justify-center w-full md:justify-start items-center space-x-4 py-8 border-b border-gray-200">
@@ -56,7 +56,7 @@
                       <%= @order.customer.name %>
                     </p>
                     <p class="text-sm leading-5 text-gray-600">
-                      <%= @order.customer.orders.count %> Previous Orders
+                      過去の注文数: <%= @order.customer.orders.count %>
                     </p>
                   </div>
                 </div>
@@ -70,13 +70,13 @@
             <div class="flex justify-between w-full flex-col mt-6">
               <div class="flex justify-center md:justify-start xl:flex-col flex-col md:space-x-6 lg:space-x-8 xl:space-x-0 space-y-4 xl:space-y-12 md:space-y-0 md:flex-row items-center md:items-start">
                 <div class="flex justify-center md:justify-start items-center md:items-start flex-col space-y-4">
-                  <p class="text-base font-semibold leading-4 text-center md:text-left text-gray-800">Shipping Address</p>
+                  <p class="text-base font-semibold leading-4 text-center md:text-left text-gray-800">配送先住所</p>
                   <div class="w-full xl:w-48 text-center md:text-left text-sm leading-5 text-gray-600">
-                    <p class="mb-2 leading-tight text-sm">Name: <span class="font-semibold text-slate-700 sm:ml-2"><%= @order.name %></span></p>
-                    <p class="mb-2 leading-tight text-sm">Postal Code: <span class="font-semibold text-slate-700 sm:ml-2"><%= @order.postal_code %></span></p>
-                    <p class="mb-2 leading-tight text-sm">Prefecture: <span class="font-semibold text-slate-700 sm:ml-2"><%= @order.prefecture %></span></p>
-                    <p class="mb-2 leading-tight text-sm whitespace-nowrap">Address1: <span class="font-semibold text-slate-700 sm:ml-2"><%= @order.address1 %></span></p>
-                    <p class="mb-2 leading-tight text-sm whitespace-nowrap">Address2: <span class="font-semibold text-slate-700 sm:ml-2"><%= @order.address2 %></span></p>
+                    <p class="mb-2 leading-tight text-sm">名前: <span class="font-semibold text-slate-700 sm:ml-2"><%= @order.name %></span></p>
+                    <p class="mb-2 leading-tight text-sm">郵便番号: <span class="font-semibold text-slate-700 sm:ml-2"><%= @order.postal_code %></span></p>
+                    <p class="mb-2 leading-tight text-sm">都道府県: <span class="font-semibold text-slate-700 sm:ml-2"><%= @order.prefecture %></span></p>
+                    <p class="mb-2 leading-tight text-sm whitespace-nowrap">住所1: <span class="font-semibold text-slate-700 sm:ml-2"><%= @order.address1 %></span></p>
+                    <p class="mb-2 leading-tight text-sm whitespace-nowrap">住所2: <span class="font-semibold text-slate-700 sm:ml-2"><%= @order.address2 %></span></p>
                   </div>
                 </div>
               </div>
@@ -85,8 +85,8 @@
       </div>
       <div class="flex justify-center flex-col md:flex-row items-stretch w-full space-y-4 md:space-y-0 md:space-x-6 xl:space-x-8">
         <div class="px-4 py-6 md:p-6 xl:p-8 w-full bg-gray-50 space-y-6">
-          <h3 class="text-xl font-semibold leading-5 text-gray-800">Order Status</h3>
-          <p>Current Status: <span class="mt-5 bg-blue-100 text-blue-800 text-md font-semibold py-2 px-3 rounded"><%= @order.status %></span></p>
+          <h3 class="text-xl font-semibold leading-5 text-gray-800">注文状況</h3>
+          <p>現在の状況: <span class="mt-5 bg-blue-100 text-blue-800 text-md font-semibold py-2 px-3 rounded"><%= convert_order_status(@order.status) %></span></p>
           <%= form_with model: @order, url: admins_order_path(@order), local: true  do |f|  %>
             <div class="mb-6">
               <%= f.select :status, Order.statuses.keys.to_a, {}, {class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3 appearance-none"} %>

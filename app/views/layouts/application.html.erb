@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Ecommerce</title>
+    <title>ネットショップ</title>
 
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -28,7 +28,7 @@
         <div class='mx-auto flex w-full flex-wrap items-center'>
           <div class='flex w-full justify-center font-extrabold text-white lg:w-1/2 lg:justify-start'>
             <%= link_to root_path, class: "text-2xl text-gray-900 no-underline hover:text-gray-900 hover:no-underline" do %>
-              🛍️ &nbsp; <span class=' text-gray-200'>ECommerce</span>
+              🛍️🐰 &nbsp; <span class=' text-gray-200'>ネットショップ</span> &nbsp; 🐰🛍️
             <% end %>
           </div>
           <div class='flex w-full content-center justify-between pt-2 lg:w-1/2 lg:justify-end lg:pt-0'>
@@ -66,13 +66,12 @@
                       </button>
                       <div class="opacity-0 invisible dropdown-menu transition-all duration-300 transform origin-top-right -translate-y-2 scale-95">
                         <div class="absolute right-0 w-56 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none" aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu">
-                          <div class="px-4 py-3">         
-                            <p class="text-sm leading-5">Signed in as</p>
+                          <div class="px-4 py-3">
                             <p class="text-sm font-medium leading-5 text-gray-900 truncate"><%= current_admin.email %></p>
                           </div>
                           <div class="py-1">
                             <%= link_to destroy_admin_session_path, data: { turbo_method: :delete }, class: "text-gray-700 flex justify-between w-full px-4 py-2 text-sm leading-5 text-left" do %>
-                              Sign out
+                              ログアウト
                             <% end %>
                           </div>
                         </div>
@@ -111,21 +110,20 @@
                       </button>
                       <div class="opacity-0 invisible dropdown-menu transition-all duration-300 transform origin-top-right -translate-y-2 scale-95">
                         <div class="absolute right-0 w-56 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none" aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu">
-                          <div class="px-4 py-3">         
-                            <p class="text-sm leading-5">Signed in as</p>
+                          <div class="px-4 py-3">
                             <p class="text-sm font-medium leading-5 text-gray-900 truncate"><%= current_customer.email %></p>
                           </div>
                           <div class="py-1">
                             <%= link_to edit_customer_registration_path, class: "text-gray-700 flex justify-between w-full px-4 py-2 text-sm leading-5 text-left" do %>
-                              Account settings
+                              アカウント設定
                             <% end %>
                             <%= link_to orders_path, class: "text-gray-700 flex justify-between w-full px-4 py-2 text-sm leading-5 text-left" do %>
-                              Order Histories
+                              注文履歴
                             <% end %>
                           </div>
                           <div class="py-1">
                             <%= link_to destroy_customer_session_path, data: { turbo_method: :delete }, class: "text-gray-700 flex justify-between w-full px-4 py-2 text-sm leading-5 text-left" do %>
-                              Sign out
+                              ログアウト
                             <% end %>
                           </div>
                         </div>
@@ -135,10 +133,10 @@
                 </li>
               <% else %>
                 <li class='px-4 text-white no-underline'>
-                  <%= link_to "Sign Up", new_customer_registration_path %>
+                  <%= link_to "アカウント作成", new_customer_registration_path %>
                 </li>
                 <li class='px-4 text-white no-underline'>
-                  <%= link_to "Sign In", new_customer_session_path %>
+                  <%= link_to "ログイン", new_customer_session_path %>
                 </li>
               <% end %>
             </ul>

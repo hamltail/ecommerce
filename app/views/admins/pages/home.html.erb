@@ -6,7 +6,7 @@
           <div class="flex justify-center items-center">
             <div class="w-2/3 max-w-full px-3">
               <div>
-                <p class="mb-0 font-sans font-semibold leading-normal text-sm">Today's Sales</p>
+                <p class="mb-0 font-sans font-semibold leading-normal text-sm">本日の売上</p>
                 <p class="mb-0 font-bold text-xl">
                   <%= number_to_currency(@today_total_sales, unit: "¥", strip_insignificant_zeros: true) %>
                 </p>
@@ -29,7 +29,7 @@
           <div class="flex justify-center items-center">
             <div class="w-2/3 max-w-full px-3">
               <div>
-                <p class="mb-0 font-sans font-semibold leading-normal text-sm">Today's Orders</p>
+                <p class="mb-0 font-sans font-semibold leading-normal text-sm">本日の注文</p>
                 <p class="mb-0 font-bold text-xl">
                   <%= @today_total_orders %>
                 </p>
@@ -51,7 +51,7 @@
 
 <%= form_with url: admins_root_path, method: :get, class: "px-9", local: true  do |f|  %>
   <div class="flex items-center">
-    <h1 class="text-xl font-semibold leading-5 text-gray-800">Order Status</h1>
+    <h1 class="text-xl font-semibold leading-5 text-gray-800">注文状況</h1>
     <%= f.select :status, options_for_select(Order.statuses.keys.to_a, @selected), { prompt: "all" }, {class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-3 appearance-none ml-4"} %>
     <%= f.submit "Search", class: "inline-flex items-center justify-center rounded-md bg-indigo-500 p-3 text-white duration-100 ease-in-out hover:bg-indigo-600 focus:outline-none ml-4 cursor-pointer" %>
   </div>
@@ -65,10 +65,10 @@
           <table class="items-center w-full mb-0 align-top border-gray-200 text-slate-500">
             <thead class="align-bottom">
               <tr>
-                <th class="px-6 py-3 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-lg border-b-solid tracking-none whitespace-nowrap text-slate-400">Customer</th>
-                <th class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-lg border-b-solid tracking-none whitespace-nowrap text-slate-400">Billings</th>
-                <th class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-lg border-b-solid tracking-none whitespace-nowrap text-slate-400">Status</th>
-                <th class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-lg border-b-solid tracking-none whitespace-nowrap text-slate-400">Order date</th>
+                <th class="px-6 py-3 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-lg border-b-solid tracking-none whitespace-nowrap text-slate-400">顧客</th>
+                <th class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-lg border-b-solid tracking-none whitespace-nowrap text-slate-400">請求</th>
+                <th class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-lg border-b-solid tracking-none whitespace-nowrap text-slate-400">状況</th>
+                <th class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-lg border-b-solid tracking-none whitespace-nowrap text-slate-400">注文日時</th>
                 <th class="px-6 py-3 font-semibold capitalize align-middle bg-transparent border-b border-gray-200 border-solid shadow-none tracking-none whitespace-nowrap text-slate-400"></th>
               </tr>
             </thead>
@@ -93,7 +93,7 @@
                   </td>
                   <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
                     <%= link_to admins_order_path(order), class: "font-semibold leading-tight text-sm text-slate-400" do %>
-                      Details
+                      詳細
                     <% end %>
                   </td>
                 </tr>

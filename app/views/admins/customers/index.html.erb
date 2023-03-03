@@ -1,6 +1,6 @@
 <div class="mb-8 text-center">
   <span class="text-3xl font-bold">
-    Customers
+    顧客リスト
   </span>
 </div>
 
@@ -12,10 +12,10 @@
           <table class="items-center w-full mb-0 align-top border-gray-200 text-slate-500">
             <thead class="align-bottom">
               <tr>
-                <th class="px-6 py-3 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-lg border-b-solid tracking-none whitespace-nowrap text-slate-400">Name</th>
-                <th class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-lg border-b-solid tracking-none whitespace-nowrap text-slate-400">Email</th>
-                <th class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-lg border-b-solid tracking-none whitespace-nowrap text-slate-400">Status</th>
-                <th class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-lg border-b-solid tracking-none whitespace-nowrap text-slate-400">Previous Orders</th>
+                <th class="px-6 py-3 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-lg border-b-solid tracking-none whitespace-nowrap text-slate-400">名前</th>
+                <th class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-lg border-b-solid tracking-none whitespace-nowrap text-slate-400">Eメール</th>
+                <th class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-lg border-b-solid tracking-none whitespace-nowrap text-slate-400">ステータス</th>
+                <th class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-lg border-b-solid tracking-none whitespace-nowrap text-slate-400">注文数</th>
                 <th class="px-6 py-3 font-semibold capitalize align-middle bg-transparent border-b border-gray-200 border-solid shadow-none tracking-none whitespace-nowrap text-slate-400"></th>
               </tr>
             </thead>
@@ -34,11 +34,11 @@
                   </td>
                   <td class="p-2 leading-normal text-center align-middle bg-transparent border-b text-sm whitespace-nowrap shadow-transparent">
                     <% if customer.status === "normal" %>
-                      <span class="bg-blue-100 text-blue-800 text-xs font-semibold p-2 rounded">Normal</span>
+                      <span class="bg-blue-100 text-blue-800 text-xs font-semibold p-2 rounded">通常</span>
                     <% elsif customer.status === "withdrawn" %>
-                      <span class="bg-orange-100 text-orange-500 text-xs font-semibold p-2 rounded">Withdrawn</span>
+                      <span class="bg-orange-100 text-orange-500 text-xs font-semibold p-2 rounded">退会</span>
                     <% else %>
-                      <span class="bg-red-100 text-red-800 text-xs font-semibold p-2 rounded">Banned</span>
+                      <span class="bg-red-100 text-red-800 text-xs font-semibold p-2 rounded">禁止</span>
                     <% end %>
                   </td>
                   <td class="p-2 text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
@@ -46,7 +46,7 @@
                   </td>
                   <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
                     <%= link_to admins_customer_path(customer), class: "font-semibold leading-tight text-sm text-slate-400" do %>
-                      Details
+                      詳細
                     <% end %>
                   </td>
                 </tr>

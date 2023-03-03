@@ -1,6 +1,6 @@
 <div class="mb-6 text-center">
   <span class="text-3xl font-bold">
-    Edit Profile
+    アカウント設定
   </span>
 </div>
 
@@ -10,7 +10,7 @@
     <%= render "customers/shared/error_messages", resource: resource %>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+      <div>現在、確認中です: <%= resource.unconfirmed_email %></div>
     <% end %>
 
     <div class="mb-6">
@@ -39,11 +39,11 @@
     </div>
 
     <div class="actions">
-      <%= f.submit "Update Profile", class: "inline-flex w-full items-center justify-center rounded-md bg-indigo-500 p-3 text-white duration-100 ease-in-out hover:bg-indigo-600 focus:outline-none" %>
+      <%= f.submit "更新する", class: "inline-flex w-full items-center justify-center rounded-md bg-indigo-500 p-3 text-white duration-100 ease-in-out hover:bg-indigo-600 focus:outline-none" %>
     </div>
   <% end %>
 </div>
 
 <div class="text-center font-bold text-red-500">
-  <%= link_to "Withdraw from Ecommerce", confirm_withdraw_customers_path %>
+  <%= link_to "退会する", confirm_withdraw_customers_path %>
 </div>

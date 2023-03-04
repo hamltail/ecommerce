@@ -18,12 +18,12 @@
     </div>
     <div class="mb-6">
       <%= f.label :price, class: "mb-2 block text-sm text-gray-600" %>
-      <%= f.number_field :price, class: "w-full rounded-md border border-gray-300 py-2 px-3 placeholder:text-gray-300 focus:border-indigo-300 focus:outline-none focus:ring focus:ring-indigo-100" %>
+      <%= f.text_field :price, class: "w-full rounded-md border border-gray-300 py-2 px-3 placeholder:text-gray-300 focus:border-indigo-300 focus:outline-none focus:ring focus:ring-indigo-100" %>
       <%= render "admins/shared/error_messages_for_field", resource: @product, field: :price %>
     </div>
     <div class="mb-6">
       <%= f.label :stock, class: "mb-2 block text-sm text-gray-600" %>
-      <%= f.number_field :stock, class: "w-full rounded-md border border-gray-300 py-2 px-3 placeholder:text-gray-300 focus:border-indigo-300 focus:outline-none focus:ring focus:ring-indigo-100" %>
+      <%= f.text_field :stock, class: "w-full rounded-md border border-gray-300 py-2 px-3 placeholder:text-gray-300 focus:border-indigo-300 focus:outline-none focus:ring focus:ring-indigo-100" %>
       <%= render "admins/shared/error_messages_for_field", resource: @product, field: :stock %>
     </div>
     <div class="mb-6">

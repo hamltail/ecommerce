@@ -4,10 +4,15 @@ class Customer < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  with_options presence: true do
-    validates :name
-    validates :status
-  end
+  validates :name,
+            uniqueness: true,
+            presence: true,
+            length: { minimum: 2, maximum: 40 }
+  validates :email,
+            uniqueness: true,
+            presence: true
+  validates :status,
+            presence: true
 
   enum status: {
     normal: 0,

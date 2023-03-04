@@ -1,0 +1,7 @@
+<% if resource.errors.any? %>
+  <ul class="text-red-700">
+    <% resource.errors.full_messages_for(field).first(1).each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>

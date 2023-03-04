@@ -76,7 +76,7 @@
       <div class="flex justify-center flex-col md:flex-row items-stretch w-full space-y-4 md:space-y-0 md:space-x-6 xl:space-x-8">
         <div class="px-4 py-6 md:p-6 xl:p-8 w-full bg-gray-50 space-y-6">
           <h3 class="text-xl font-semibold leading-5 text-gray-800">注文状況</h3>
-          <p>最新状況: <span class="mt-5 bg-blue-100 text-blue-800 text-md font-semibold py-2 px-2.5 rounded"><%= convert_order_status(@order.status) %></span></p>
+          <p>最新状況: <span class="mt-5 bg-blue-100 text-blue-800 text-md font-semibold py-2 px-2.5 rounded"><%= @order.status %></span></p>
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 ja:
   activerecord:
     attributes:
-      user:
+      customer:
         confirmation_sent_at: パスワード確認送信時刻
         confirmation_token: パスワード確認用トークン
         confirmed_at: パスワード確認時刻
@@ -10,7 +10,7 @@ ja:
         current_sign_in_at: 現在のログイン時刻
         current_sign_in_ip: 現在のログインIPアドレス
         email: Eメール
-        username: ユーザー名
+        name: ユーザー名
         profile: プロフィール
         url: サイトURL
         encrypted_password: 暗号化パスワード

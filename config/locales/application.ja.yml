@@ -1,0 +1,13 @@
+ja:
+  activerecord:
+    attributes:
+      admin:
+        email: Eメール
+        password: パスワード
+      product:
+        name: 商品名
+        description: 説明
+        price: 価格
+        stock: 在庫数
+        image: 商品画像
+

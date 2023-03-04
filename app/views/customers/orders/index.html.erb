@@ -29,7 +29,7 @@
                     <%= number_to_currency(order.billing_amount, unit: "¥", strip_insignificant_zeros: true) %>
                   </p>
                   <span class="ml-2 bg-blue-100 text-blue-800 text-xs font-semibold p-2 rounded">
-                    <%= convert_order_status(order.status) %>
+                    <%= order.status %>
                   </span>
                 </div>
                 <div>

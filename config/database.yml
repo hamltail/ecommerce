@@ -18,5 +18,9 @@ test:
   database: <%= ENV.fetch("POSTGRES_DB") { "ecommerce" } %>_test
 
 production:
-  <<: *default
-  database: <%= ENV.fetch("POSTGRES_DB") { "ecommerce" } %>_production
+  adapter: mysql2
+  encoding: utf8
+  database: ecommerce_production
+  username: <%= ENV.fetch("DB_USER") { "user" } %>
+  password: <%= ENV.fetch("DB_PASSWORD") { "password" } %>
+  host: <%= ENV.fetch("DB_HOST") { "host" } %>

@@ -1,19 +1,17 @@
 {
-  "name": "ecommerce",
+  "name": "hello",
   "private": true,
   "dependencies": {
     "@hotwired/stimulus": "3.2.1",
     "@hotwired/turbo-rails": "7.2.5",
-    "autoprefixer": "^10.4.13",
-    "build": "^0.1.4",
-    "esbuild": "^0.17.11",
-    "postcss": "^8.4.21",
+    "autoprefixer": "10.4.13",
+    "esbuild": "0.17.7",
+    "postcss": "8.4.21",
     "postcss-import": "15.1.0",
-    "tailwind": "^4.0.0",
-    "tailwindcss": "^3.2.7"
+    "tailwindcss": "3.2.4"
   },
   "scripts": {
-    "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=assets",
-    "build:css": "tailwindcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css"
+    "build": "./run yarn:build",
+    "build:css": "./run yarn:build:css"
   }
 }

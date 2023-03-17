@@ -1,6 +1,10 @@
 <div class="px-6">
   <div class="flex justify-start item-start space-y-2 flex-col mb-8">
-    <h1 class="mb-1 text-3xl lg:text-4xl font-semibold leading-7 lg:leading-9 text-gray-800">注文番号 #<%= @order.id %></h1>
+    <h1 class="mb-1 text-3xl lg:text-4xl font-semibold leading-7 lg:leading-9">
+      <span class="bg-gradient-to-r from-green-500 to-lime-400 bg-clip-text text-transparent">
+        注文番号 #<%= @order.id %>
+      </span>
+    </h1>
     <p class="text-base font-medium leading-6 text-gray-600">登録日時: <%= l @order.created_at, format: :short %></p>
     <p class="text-base font-medium leading-6 text-gray-600">更新日時: <%= l @order.updated_at, format: :short %></p>
   </div> 
@@ -91,7 +95,7 @@
             <div class="mb-6">
               <%= f.select :status, Order.statuses.keys.to_a, {}, {class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3 appearance-none"} %>
             </div>
-            <%= f.submit class: "inline-flex w-full items-center justify-center rounded-md bg-indigo-500 p-3 text-white duration-100 ease-in-out hover:bg-indigo-600 focus:outline-none cursor-pointer" %>
+            <%= f.submit class: "inline-flex w-full items-center justify-center rounded-md bg-green-500 p-3 text-white duration-100 ease-in-out hover:bg-green-600 focus:outline-none cursor-pointer" %>
           <% end %>
         </div>
       </div>

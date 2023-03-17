@@ -1,5 +1,5 @@
 <div class="mb-8 text-center">
-  <span class="text-3xl font-bold bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent">
+  <span class="text-3xl font-bold bg-gradient-to-r from-green-500 to-lime-400 bg-clip-text text-transparent">
     カート
   </span>
 </div>
@@ -8,7 +8,7 @@
   <div class='mx-auto max-w-3xl'>
     <p class='mb-8 text-xl text-center'>カートは空です</p>
     <div class='flex justify-center'>
-      <%= link_to products_path, class: 'group inline-flex items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-purple-600 to-blue-500 p-0.5 font-medium text-gray-900 hover:text-white focus:ring-4 focus:ring-blue-300 group-hover:from-purple-600 group-hover:to-blue-500' do %>
+      <%= link_to products_path, class: 'group inline-flex items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-green-500 to-lime-400 p-0.5 font-medium text-gray-900 hover:text-white focus:ring-4 focus:ring-blue-300 group-hover:from-green-500 group-hover:to-lime-400' do %>
         <span class='rounded-md bg-white px-5 py-2.5 transition-all duration-75 ease-in group-hover:bg-opacity-0'>
           商品を探そう
         </span>
@@ -93,7 +93,7 @@
         <span class="font-semibold text-lg uppercase">合計</span>
         <span class="font-semibold text-lg"><%= number_to_currency(@total + POSTAGE, unit: "¥", strip_insignificant_zeros: true) %></span>
       </div>
-      <%= button_to checkouts_path, data: { turbo: false }, class:'w-full cursor-pointer focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2' do %>
+      <%= button_to checkouts_path, data: { turbo: false }, class:'w-full cursor-pointer focus:outline-none text-white bg-green-500 hover:bg-green-600 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2' do %>
         支払う
       <% end %>
     </div>

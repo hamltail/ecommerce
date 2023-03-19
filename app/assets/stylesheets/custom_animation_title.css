@@ -1,0 +1,46 @@
+.animate-title {
+  color: limegreen;
+  opacity: 0;
+}
+.animate-title.inview {
+  opacity: 0.8;
+}
+.animate-title.inview .char {
+  display: inline-block;
+  animation-name: kf-animate-chars;
+  animation-duration: 3s;
+  animation-timing-function: cubic-bezier(0.39, 1.57, 0.58, 1);
+  animation-fill-mode: both;
+}
+.animate-title.inview .char:nth-child(1) {
+  animation-delay: 0.066s;
+}
+.animate-title.inview .char:nth-child(2) {
+  animation-delay: 0.132s;
+}
+.animate-title.inview .char:nth-child(3) {
+  animation-delay: 0.198s;
+}
+.animate-title.inview .char:nth-child(4) {
+  animation-delay: 0.264s;
+}
+.animate-title.inview .char:nth-child(5) {
+  animation-delay: 0.33s;
+}
+.animate-title.inview .char:nth-child(6) {
+  animation-delay: 0.396s;
+}
+.animate-title.inview .char:nth-child(7) {
+  animation-delay: 0.462s;
+}
+
+@keyframes kf-animate-chars {
+  0% {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}/*# sourceMappingURL=custom_animation_title.css.map */

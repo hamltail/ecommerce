@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const str = el.innerHTML.trim().split("");
 
   el.innerHTML = str.reduce((accu, curr) => {
+    curr = curr.replace(/\s+/, "&nbsp;");
     return `${accu}<span class="char">${curr}</span>`;
   }, "");
 

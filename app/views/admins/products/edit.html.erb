@@ -1,5 +1,5 @@
 <div class="mb-6 text-center">
-  <span class="text-3xl font-bold bg-gradient-to-r from-green-500 to-lime-400 bg-clip-text text-transparent">
+  <span class="text-3xl font-bold bg-c-gray bg-clip-text text-transparent">
     商品編集
   </span>
 </div>
@@ -31,6 +31,6 @@
       <%= f.file_field :image, class: "block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" %>
       <%= render "admins/shared/error_messages_for_field", resource: @product, field: :image %>
     </div>
-    <%= f.submit class: "inline-flex w-full items-center justify-center rounded-md bg-green-500 p-3 text-white duration-100 ease-in-out hover:bg-green-600 focus:outline-none" %>
+    <%= f.submit class: "inline-flex w-full items-center justify-center rounded-md bg-black p-3 text-white duration-100 ease-in-out hover:bg-gray-600 focus:outline-none" %>
   <% end %>
 </div>

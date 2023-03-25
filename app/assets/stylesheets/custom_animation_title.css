@@ -1,9 +1,9 @@
 .animate-title {
-  color: limegreen;
+  color: #696969;
   opacity: 0;
 }
 .animate-title.inview {
-  opacity: 0.8;
+  opacity: 1;
 }
 .animate-title.inview .char {
   display: inline-block;
@@ -32,6 +32,12 @@
 }
 .animate-title.inview .char:nth-child(7) {
   animation-delay: 0.462s;
+}
+.animate-title.inview .char:nth-child(8) {
+  animation-delay: 0.528s;
+}
+.animate-title.inview .char:nth-child(9) {
+  animation-delay: 0.594s;
 }
 
 @keyframes kf-animate-chars {

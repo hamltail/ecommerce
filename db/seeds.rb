@@ -108,7 +108,7 @@ product10 = Product.new(
   name: "中国ワイン",
   description: description, 
   price: 300, 
-  stock: 200
+  stock: 1
 )
 product10.image.attach(io: File.open(Rails.root.join('app/assets/images/wine01.png')), filename: 'wine01.png')
 product10.save!

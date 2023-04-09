@@ -1,18 +1,22 @@
-<div class='pb-12 text-center md:pb-16'>
-  <h1 class='leading-tighter mb-4 text-7xl font-extrabold tracking-tighter md:text-8xl'>
-    <span class='animate-title inview'>
-      ネットショップ
-    </span>
-  </h1>
-  <div class='mx-auto max-w-3xl'>
-    <p class='mb-8 text-xl'>欲しいものが見つかるはずです</p>
-    <div class='flex justify-center mt-5'>
-      <div class='mt-3'>
-        <%= link_to products_path, class:'group inline-flex items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-green-500 to-lime-400 p-0.5 font-medium text-gray-900 hover:text-white focus:ring-4 focus:ring-green-300 group-hover:from-green-500 group-hover:to-lime-400' do %>
-          <span class='rounded-md bg-white px-5 py-2.5 transition-all duration-75 ease-in group-hover:bg-opacity-0'>
-            商品を探そう
-          </span>
-        <% end %>
+<div class='pb-12 text-center md:pb-16 relative'>
+  <div class='max-w-512px mx-auto'>
+    <%= image_tag 'background.png', class: 'mx-auto opacity-30' %>
+  </div>
+  <div class='absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center'>
+    <h1 class='leading-tighter mb-4 text-7xl font-extrabold tracking-tighter md:text-8xl'>
+      <span class='animate-title inview'>
+        ネットショップ
+      </span>
+    </h1>
+    <div class='mx-auto max-w-3xl z-20'>
+      <div class='flex justify-center mt-5'>
+        <div class='mt-3'>
+          <%= link_to products_path, class:'group inline-flex items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-green-500 to-lime-400 p-0.5 font-medium text-gray-900 hover:text-white focus:ring-4 focus:ring-green-300 group-hover:from-green-500 group-hover:to-lime-400' do %>
+            <span class='rounded-md bg-white px-5 py-2.5 transition-all duration-75 ease-in group-hover:bg-opacity-0'>
+              商品を探そう
+            </span>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>

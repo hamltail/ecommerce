@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-    <title>ネットショップ</title>
+    <title>Web Store</title>
 
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -28,7 +28,7 @@
         <div class='mx-auto flex w-full flex-wrap items-center'>
           <div class='flex w-full justify-center font-extrabold text-white lg:w-1/2 lg:justify-start'>
             <%= link_to root_path, class: "no-underline hover:no-underline" do %>
-              <%= image_tag 'logo.png', alt: 'ネットショップ' %>
+              <%= image_tag 'logo.png', alt: 'Web Store' %>
             <% end %>
           </div>
           <div class='flex w-full content-center justify-between pt-2 lg:w-1/2 lg:justify-end lg:pt-0'>
@@ -146,12 +146,12 @@
     </div>
 
     <% if flash[:notice] %>
-      <div class="p-4 mb-4 text-md text-green-700 text-center font-bold">
+      <div class="p-4 mb-4 text-md text-green-600 text-center font-bold">
         <%= notice %>
       </div>
     <% end %>
     <% if flash[:alert] %>
-      <div class="p-4 mb-4 text-md text-red-700 text-center font-bold">
+      <div class="p-4 mb-4 text-md text-red-600 text-center font-bold">
         <%= alert %>
       </div>
     <% end %>

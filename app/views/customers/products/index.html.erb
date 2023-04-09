@@ -1,16 +1,11 @@
-<div class="mb-8 text-center">
-  <span class="text-3xl font-bold bg-gradient-to-r from-green-500 to-lime-400 bg-clip-text text-transparent">
-    商品
-  </span>
-</div>
 <div class="flex flex-wrap justify-center md:justify-start px-5">
-  <div class="mb-3 w-fit text-md font-medium mr-2 px-4 py-1.5 rounded <%= @sort === "latest" ? "bg-gray-800 text-gray-100" : "bg-gray-100 text-gray-800" %>">
+  <div class="mb-3 w-fit text-md font-medium mr-2 px-4 py-1.5 rounded <%= @sort === "latest" ? "bg-black text-gray-100" : "bg-gray-100 text-gray-800" %>">
     <%= link_to '新着順', products_path(latest: true) %>
   </div>
-  <div class="mb-3 w-fit text-md font-medium mr-2 px-4 py-1.5 rounded <%= @sort === "price_high_to_low" ? "bg-gray-800 text-gray-100" : "bg-gray-100 text-gray-800" %>">
+  <div class="mb-3 w-fit text-md font-medium mr-2 px-4 py-1.5 rounded <%= @sort === "price_high_to_low" ? "bg-black text-gray-100" : "bg-gray-100 text-gray-800" %>">
     <%= link_to '価格：高い順', products_path(price_high_to_low: true) %>
   </div>
-  <div class="mb-3 w-fit text-md font-medium mr-2 px-4 py-1.5 rounded <%= @sort === "price_low_to_high" ? "bg-gray-800 text-gray-100" : "bg-gray-100 text-gray-800" %>">
+  <div class="mb-3 w-fit text-md font-medium mr-2 px-4 py-1.5 rounded <%= @sort === "price_low_to_high" ? "bg-black text-gray-100" : "bg-gray-100 text-gray-800" %>">
     <%= link_to '価格：安い順', products_path(price_low_to_high: true) %>
   </div>
 </div>

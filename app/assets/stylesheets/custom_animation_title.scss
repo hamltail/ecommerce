@@ -1,5 +1,5 @@
 .animate-title {
-  color: limegreen;
+  color: #696969;
   opacity: 0;
 
   &.inview {
@@ -14,7 +14,7 @@
         fill-mode: both;
       }
 
-      @for $i from 1 through 7 {
+      @for $i from 1 through 9 {
           &:nth-child(#{$i}) {
               animation-delay: $i * 0.066s;
           }

@@ -53,7 +53,7 @@
   <div class="flex items-center">
     <h1 class="text-xl font-semibold leading-5 text-gray-800">注文状況</h1>
     <%= f.select :status, options_for_select(Order.statuses.keys.to_a, @selected), { prompt: "all" }, {class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-3 appearance-none ml-4"} %>
-    <%= f.submit "Search", class: "inline-flex items-center justify-center rounded-md bg-green-500 p-3 text-white duration-100 ease-in-out hover:bg-green-600 focus:outline-none ml-4 cursor-pointer" %>
+    <%= f.submit "Search", class: "inline-flex items-center justify-center rounded-md bg-black p-3 text-white duration-100 ease-in-out hover:bg-gray-600 focus:outline-none ml-4 cursor-pointer" %>
   </div>
 <% end %>
 

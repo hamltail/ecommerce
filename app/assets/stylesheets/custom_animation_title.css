@@ -3,7 +3,7 @@
   opacity: 0;
 }
 .animate-title.inview {
-  opacity: 0.8;
+  opacity: 1;
 }
 .animate-title.inview .char {
   display: inline-block;
